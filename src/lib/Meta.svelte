@@ -22,6 +22,7 @@
     property="og:title"
     content={pageTitle}
   />
+
   <meta property="og:description" content={pageDescription} />
   <meta property="og:image" content={ogImage} />
   <meta property="og:type" content="website" />
