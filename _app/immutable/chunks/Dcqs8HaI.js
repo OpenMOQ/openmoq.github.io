@@ -1,1 +1,0 @@
-import{r as e}from"./B1wrSMTN.js";const n={index:`${e("/")}`,contact:`${e("/contact")}`},t={join:"https://docs.google.com/forms/d/e/1FAIpQLScfrbs7p6QPfCLfchBkJw6IADUF7I_ud11jFyKONuNEKnTEjA/viewform?usp=send_form"},s={why:"why",progress:"progress",technology:"technology",members:"members"},c=o=>`${e("/")}#${s[o]}`;export{t as e,c as g,n as i};
