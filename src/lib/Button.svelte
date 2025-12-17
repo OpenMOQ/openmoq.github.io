@@ -29,12 +29,12 @@
     ...rest
   }: Props = $props();
 
-  const className = [
+  const className = $derived([
     "button",
     variant,
     color && `color-${color}`,
     size && `size-${size}`,
-  ];
+  ]);
 </script>
 
 {#snippet buttonContent()}

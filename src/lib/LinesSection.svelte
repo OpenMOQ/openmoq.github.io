@@ -14,7 +14,7 @@
 
   let { id, background, children }: Props = $props();
 
-  const dividerColor = background === "dark" ? "light" : "dark";
+  const dividerColor = $derived(background === "dark" ? "light" : "dark");
 </script>
 
 <Divider color={dividerColor} />

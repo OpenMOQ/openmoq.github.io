@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { Icon } from 'svelte-icon';
-  import Text from './Text.svelte';
+  import { Icon } from "svelte-icon";
+  import Text from "./Text.svelte";
 
-  import checkIcon from '$icons/check.svg?raw';
-  import dotsIcon from '$icons/dots.svg?raw';
+  import checkIcon from "$icons/check.svg?raw";
+  import dotsIcon from "$icons/dots.svg?raw";
 
   interface Props {
     items: readonly {
       date?: string;
       title: string;
       description: string;
-      state?: 'completed' | 'in progress';
+      state?: "completed" | "in progress";
     }[];
   }
 
@@ -22,20 +22,25 @@
     <li class="item">
       <div
         class={[
-          'state',
-          (item.state === 'completed' || item.state === 'in progress') && 'completed'
+          "state",
+          (item.state === "completed" || item.state === "in progress") &&
+            "completed",
         ]}
       >
         {#if item.state}
-          <Icon data={item.state === 'completed' ? checkIcon : dotsIcon} stroke="none" size="16" />
+          <Icon
+            data={item.state === "completed" ? checkIcon : dotsIcon}
+            stroke="none"
+            size="16"
+          />
         {/if}
         <div
           class={[
-            'line',
+            "line",
             items[index + 1] &&
-              (items[index + 1].state === 'completed' ||
-                items[index + 1].state === 'in progress') &&
-              'completed'
+              (items[index + 1].state === "completed" ||
+                items[index + 1].state === "in progress") &&
+              "completed",
           ]}
         ></div>
       </div>
@@ -43,14 +48,24 @@
         <span class="title">
           {#if item.date}
             <span class="date">
-              <Text tag="span" color="light" font="lexend-deca" size={13} weight={500}>
+              <Text
+                tag="span"
+                color="light"
+                font="lexend-deca"
+                size={13}
+                weight={500}
+              >
                 {item.date}
               </Text>
             </span>
           {/if}
-          <Text tag="strong" color="light" font="lexend" size={18} weight={500}>{item.title}</Text>
+          <Text tag="strong" color="light" font="lexend" size={18} weight={500}
+            >{item.title}</Text
+          >
         </span>
-        <Text tag="p" color="light" size={16} weight={400} opacity={0.6}>{item.description}</Text>
+        <Text tag="p" color="light" size={16} weight={400} opacity={0.6}
+          >{item.description}</Text
+        >
       </div>
     </li>
   {/each}
@@ -120,7 +135,7 @@
     width: 2px;
     height: calc(100% - 30px);
     transform: translateX(-50%);
-    background-color: var(--color-gray);
+    background-color: rgba(255, 255, 255, 0.1);
 
     &.completed {
       background-color: var(--color-yellow);

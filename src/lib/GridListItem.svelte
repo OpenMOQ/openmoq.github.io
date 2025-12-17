@@ -1,15 +1,15 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+  import type { Snippet } from "svelte";
 
   interface Props {
-    color: 'light' | 'dark';
+    color: "light" | "dark";
     children: Snippet;
   }
 
   let { color, children }: Props = $props();
 </script>
 
-<li class={['item', color]}>
+<li class={["item", color]}>
   {@render children()}
 </li>
 
@@ -26,7 +26,7 @@
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       top: 100%;
       left: -1px;
@@ -56,19 +56,13 @@
       border-radius: 20px 0 0 0;
 
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         top: -1px;
         right: -20px;
         left: auto;
         width: 20px;
         height: 1px;
-      }
-
-      &:nth-child(2n) {
-        &:after {
-          content: none;
-        }
       }
     }
   }

@@ -1,23 +1,59 @@
 <script lang="ts">
-  import type { Picture } from "vite-imagetools";
-
   import Dot from "./Dot.svelte";
   import Text from "./Text.svelte";
   import Title from "./Title.svelte";
   import Carousel from "./Carousel.svelte";
   import CarouselSlide from "./CarouselSlide.svelte";
 
+  import gwendalSimonImage from "$images/gwendal-simon.jpg?enhanced";
+  import michalHosnaImage from "$images/michal-hosna.jpg?enhanced";
+  import willLawImage from "$images/will-law.jpg?enhanced";
+  import cullenJenningsImage from "$images/cullen-jennings.jpg?enhanced";
+  import seanMcCarthyImage from "$images/sean-mccarthy.jpg?enhanced";
+
   interface Props {
     title: string;
-    list: {
-      photo?: Picture;
-      quote?: string;
-      name?: string;
-      company: string;
-    }[];
   }
 
-  let { title, list }: Props = $props();
+  let { title }: Props = $props();
+
+  const list = [
+    {
+      photo: willLawImage,
+      quote:
+        "OpenMOQ represents the future of collaborative infrastructure development.",
+      name: "Will Law",
+      company: "Akamai",
+    },
+    {
+      photo: michalHosnaImage,
+      quote:
+        "With OpenMOQ, we are building the foundation for next-generation streaming.",
+      name: "Michal Hosna",
+      company: "CDN77",
+    },
+    {
+      photo: cullenJenningsImage,
+      quote:
+        "OpenMOQ will help accelerate building and deploying technologies that reduce latency. This will improve user experiences.",
+      name: "Cullen Jennings",
+      company: "Cisco",
+    },
+    {
+      photo: gwendalSimonImage,
+      quote:
+        "With OpenMOQ we have the opportunity to design a solid and efficient reference implementation, applying careful architecture so MOQ can serve both professional distribution and large-scale direct delivery.",
+      name: "Gwendal Simon",
+      company: "Synamedia",
+    },
+    {
+      photo: seanMcCarthyImage,
+      quote:
+        "OpenMoQ will be instrumental in tackling the streaming latency and scale challenge, benefiting both content providers and viewers globally.",
+      name: "Sean McCarthy",
+      company: "YouTube",
+    },
+  ].sort((a, b) => a.company.localeCompare(b.company));
 </script>
 
 <Title level={3} color="light" size={20} weight={500} className="mb-30">

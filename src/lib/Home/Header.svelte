@@ -167,10 +167,6 @@
   }
 
   @media (min-width: 768px) {
-    .header {
-      padding: 135px 0 80px;
-    }
-
     .listWrapper {
       margin-bottom: 50px;
     }

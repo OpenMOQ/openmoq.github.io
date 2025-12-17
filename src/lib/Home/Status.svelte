@@ -25,7 +25,7 @@
       // date: '2025/9',
       title: "Company setup",
       description: "Legal structure & governance in progress",
-      state: "in progress",
+      state: "completed",
     },
     {
       title: "MVP Components",

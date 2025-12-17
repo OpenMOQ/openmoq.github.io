@@ -35,7 +35,7 @@
             color="dark"
             weight={400}
             align="center"
-            maxWidth={530}
+            maxWidth={710}
             size={32}
             className="mb-40"
           >
