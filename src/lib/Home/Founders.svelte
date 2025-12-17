@@ -15,12 +15,14 @@
   import qualabsLogo from "$logos/qualabs.svg";
   import vindralLogo from "$logos/vindral.svg";
   import klagenfurtLogo from "$logos/klagenfurt.svg";
+  import synamediaLogo from "$logos/synamedia.svg";
   import MembersSection from "$lib/MembersSection.svelte";
 
   const charterMembers = [
     { name: "Akamai", src: akamaiLogo, width: 99, height: 40 },
     { name: "CDN77", src: cdn77Logo, width: 120, height: 35 },
     { name: "RED5", src: red5Logo, width: 100, height: 30 },
+    { name: "Synamedia", src: synamediaLogo, width: 150, height: 38 },
   ];
 
   const standardMembers = [
