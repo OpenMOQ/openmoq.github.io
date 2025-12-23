@@ -6,7 +6,13 @@
 
   interface Props {
     title: string;
-    members: { name: string; src: string; width: number; height: number }[];
+    members: {
+      name: string;
+      href: string;
+      src: string;
+      width: number;
+      height: number;
+    }[];
   }
 
   let { title, members }: Props = $props();
@@ -26,13 +32,15 @@
   <ul class="list">
     {#each sortedMembers as item (item.name)}
       <li class="item">
-        <img
-          src={item.src}
-          alt={item.name}
-          width={item.width}
-          height={item.height}
-          class="logo"
-        />
+        <a href={item.href} target="_blank">
+          <img
+            src={item.src}
+            alt={item.name}
+            width={item.width}
+            height={item.height}
+            class="logo"
+          />
+        </a>
       </li>
     {/each}
   </ul>

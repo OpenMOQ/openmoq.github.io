@@ -21,6 +21,15 @@
       text: "For interviews, press inquiries, or official statements.",
       link: "director@openmoq.org",
     },
+    {
+      title: "Mailing address",
+      address: [
+        "OpenMOQ Software Consortium",
+        "Bahnhofstrasse 21",
+        "6300 Zug",
+        "Switzerland",
+      ],
+    },
   ];
 </script>
 
@@ -31,20 +40,31 @@
         {item.title}
       </Title>
 
-      <Text
-        color="light"
-        size={15}
-        opacity={0.8}
-        maxWidth={300}
-        className="mb-20"
-      >
-        {item.text}
-      </Text>
+      {#if item.text}
+        <Text
+          color="light"
+          size={15}
+          opacity={0.8}
+          maxWidth={300}
+          className="mb-20"
+        >
+          {item.text}
+        </Text>
+      {/if}
 
-      <div class="link">
-        <Icon data={anchorIcon} stroke="none" size="10" fill="currentColor" />
-        <a href={`mailto:${item.link}`}>{item.link}</a>
-      </div>
+      {#if item.link}
+        <div class="link">
+          <Icon data={anchorIcon} stroke="none" size="10" fill="currentColor" />
+          <a href={`mailto:${item.link}`}>{item.link}</a>
+        </div>
+      {/if}
+      {#if item.address}
+        <div class="address">
+          {#each item.address as line}
+            <Text color="light" size={15} opacity={0.8}>{line}</Text>
+          {/each}
+        </div>
+      {/if}
     </li>
   {/each}
 </ul>
@@ -71,13 +91,13 @@
     .boxes {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      max-width: 950px;
     }
   }
 
   @media (min-width: 960px) {
     .boxes {
-      grid-template-columns: repeat(3, 1fr);
-      max-width: none;
+      gap: 100px 230px;
     }
   }
 </style>
